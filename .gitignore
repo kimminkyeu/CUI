@@ -1,0 +1,12 @@
+
+# ignore binary files
+# ----------------------------
+build
+cmake-build-debug
+.idea
+
+./dependency/glm
+./dependency/glfw/build
+./dependency/glew/build
+
+

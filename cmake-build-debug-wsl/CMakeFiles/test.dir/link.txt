@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/test.dir/CuiApp/main.cpp.o -o test  /home/minky/goinfree/CUI/dependency/glad/build/libglad.a /home/minky/goinfree/CUI/dependency/glfw/build/src/libglfw3.a -lX11 /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so 

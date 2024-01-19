@@ -1,0 +1,6 @@
+C:\Windows\system32\wsl.exe --distribution Ubuntu --exec /usr/bin/zsh -c "export CMAKE_COLOR_DIAGNOSTICS=ON && export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd /home/minky/goinfree/CUI/cmake-build-debug-wsl && /usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G 'CodeBlocks - Unix Makefiles' -S /home/minky/goinfree/CUI -B /home/minky/goinfree/CUI/cmake-build-debug-wsl"
+OpenGL included at /usr/include
+GLM included at /home/minky/goinfree/CUI/dependency/glm
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/minky/goinfree/CUI/cmake-build-debug-wsl
