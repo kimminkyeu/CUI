@@ -6,6 +6,7 @@
 #include "GLFW/glfw3.h"
 
 #include "Assert.h"
+#include "Log.h"
 
 static void glfw_error_callback( int error_code, const char* description ) noexcept
 {
@@ -54,6 +55,7 @@ int main( int argc, char** argv )
 
   (void)argc;
   (void)argv;
+  LOG_INFO( "Main start!" );
 
   glfwSetErrorCallback( glfw_error_callback );
   if ( glfwInit() == false )
@@ -93,14 +95,15 @@ int main( int argc, char** argv )
   // set glfw render context
   glfwSwapInterval( 1 );
   glfwMakeContextCurrent( windowPtr );
+
   while ( !glfwWindowShouldClose( windowPtr ) )
   {
     // 1. poll event
     glfwPollEvents();
 
-    int x, y;
-    glfwGetWindowPos( windowPtr, &x, &y );
-    glfwSetWindowPos( windowPtr, x + 1, y );
+    //    int x, y;
+    //    glfwGetWindowPos( windowPtr, &x, &y );
+    //    glfwSetWindowPos( windowPtr, x + 1, y );
     // 2. get event from event queue.
 
     // 3. if event, calculate 2d

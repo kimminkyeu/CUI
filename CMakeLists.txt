@@ -26,28 +26,22 @@ find_package(OpenGL REQUIRED) # stops processing with an error message if the pa
 set(OpenGL_GL_PREFERENCE LEGACY)
 print_message(STATUS "OpenGL included at ${OPENGL_INCLUDE_DIR}") # path set by "find_package"
 
-# GLM math library
-# ----------------------------------------------------------------------------
-# https://github.com/g-truc/glm/blob/master/manual.md#-15-finding-glm-with-cmake
-set(glm_DIR ${CMAKE_SOURCE_DIR}/dependency/glm/cmake/glm) # if necessary
-find_package(glm CONFIG REQUIRED)
-target_link_libraries(${NAME} PRIVATE glm::glm)
-print_message(STATUS "GLM included at ${GLM_INCLUDE_DIRS}") # path set by "find_package"
-
 # set include path for glad, glfw
 # ----------------------------------------------------------------------------
 include_directories(SYSTEM # to use '#include <...>'
         ${CMAKE_SOURCE_DIR}
         ${CMAKE_SOURCE_DIR}/dependency/glad/build/include
         ${CMAKE_SOURCE_DIR}/dependency/glfw/include
-        ${CMAKE_SOURCE_DIR}/dependency/glm/glm
-        ${CMAKE_SOURCE_DIR}/dependency/stb_image
+        ${CMAKE_SOURCE_DIR}/dependency/spdlog/include
+        ${CMAKE_SOURCE_DIR}/dependency/glm/glm # header only
+        ${CMAKE_SOURCE_DIR}/dependency/stb_image # header only
 )
 
 # link libraries (archive files)
 # ----------------------------------------------------------------------------
 target_link_libraries(${NAME} PUBLIC
         OpenGL::GL
+        ${CMAKE_SOURCE_DIR}/dependency/spdlog/build/libspdlog.a
         ${CMAKE_SOURCE_DIR}/dependency/glad/build/libglad.a
         ${CMAKE_SOURCE_DIR}/dependency/glfw/build/src/libglfw3.a
 )
